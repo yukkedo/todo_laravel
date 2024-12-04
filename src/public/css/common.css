@@ -2,15 +2,28 @@
     background: #000;
 }
 
-.header__inner{
+.header__title{
     margin: 0 auto;
     padding: 20px;
     max-width: 1230px;
 }
 
 .header__logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo--top{
     color:#fff;
     text-decoration: none;
     font-weight: bold;
     font-size: 30px;
+    padding: 20px 100px;
+}
+
+.header__nav--link{
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 100px;
 }

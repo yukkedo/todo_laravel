@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,25 @@ use App\Http\Controllers\TodoController;
 |
 */
 
+// Todo作成画面表示
 Route::get('/', [TodoController::class, 'index']);
 // 追加機能
 Route::post('/todos', [TodoController::class, 'store']);
 // 更新機能
-Route::patch('/todos/update', [TodoController::class, 'update']);
+Route::patch('/todos/{todo_id}', [TodoController::class, 'update']);
 // 削除機能
-Route::delete('/todos/delete', [TodoController::class, 'destroy']);
+Route::delete('/todos/{todo_id}', [TodoController::class, 'destroy']);
+// 検索機能
+Route::get('/todos/search', [TodoController::class, 'search']);
+
+
+
+// /localhos/categories
+// カテゴリ一覧表示
+Route::get('/categories', [CategoryController::class,'index']);
+// 追加機能
+Route::post('/categories', [CategoryController::class, 'store']);
+// 更新機能
+Route::patch('/categories/{category_id}', [CategoryController::class, 'update']);
+// 削除機能
+Route::delete('/categories/{category_id}', [CategoryController::class, 'destroy']);
